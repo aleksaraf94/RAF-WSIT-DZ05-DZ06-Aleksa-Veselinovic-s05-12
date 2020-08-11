@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        tr{
+            background-color: yellow;
+        }
+        tr:nth-child(even){
+            background-color: blue;
+        }
+        .predavac, .ucionica{
+            cursor: pointer;
+        }
+        .predavac:hover, .ucionica:hover {
+            background-color: aqua;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="unos">
+    <table border="1" id="raspored"></table>
+    <hr>
+    <ul>
+
+        <li><b>predavaci</b></li>
+        {% for i in predavaci %}
+        <li class="predavac">{{ i }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <ul>
+        <li><b>ucionice</b></li>
+        {% for i in ucionice %}
+        <li class="ucionica">{{ i }}</li>
+        {% endfor %}
+    </ul>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{url_for('static',filename='script.js')}}"></script>
+</html>
